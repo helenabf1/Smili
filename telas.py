@@ -48,6 +48,7 @@ def _desenhar_mundo(surf, mundo):
     cam = mundo.camera_y
     W2S = mundo.world_to_screen_y
 
+    # 1. Tiles de fundo
     first = int(cam // FAIXA_H) - 1
     last = first + (ALTURA // FAIXA_H) + 3
     for fi in range(first, last + 1):
@@ -61,6 +62,7 @@ def _desenhar_mundo(surf, mundo):
         bc = (38, 40, 46) if t == 'road' else (45, 12, 72) if t == 'sewer' else (80, 72, 60)
         pygame.draw.line(surf, bc, (0, sy), (LARGURA, sy), 1)
 
+    # 2. Queijos
     for q in mundo.queijos:
         if q['coletado']:
             continue
@@ -68,24 +70,28 @@ def _desenhar_mundo(surf, mundo):
         if -40 < sy < ALTURA + 40:
             surf.blit(a['queijo'], (q['wx'], sy))
 
+    # 3. Obstáculos estáticos
     for o in mundo.obst:
         sy = W2S(o['wy'])
         if -80 < sy < ALTURA + 80:
             _sombra_oval(surf, o['wx'], sy, o['w'], o['h'])
             surf.blit(o['img'], (o['wx'], sy))
 
+    # 4. Plataformas do esgoto
     for p in mundo.plataformas:
         sy = W2S(p['wy'])
         if -80 < sy < ALTURA + 80:
             _sombra_oval(surf, p['wx'], sy, p['w'], p['h'], alpha=45)
             surf.blit(p['img'], (p['wx'], sy))
 
+    # 5. Carros com sombra
     for c in mundo.carros:
         sy = W2S(c['wy'])
         if -80 < sy < ALTURA + 80:
             _sombra_oval(surf, c['wx'], sy, c['w'], c['h'])
             surf.blit(c['img'], (c['wx'], sy))
 
+    # 6. Rato
     rsy = W2S(mundo.rato_wy)
     _sombra_oval(surf, mundo.rato_wx, rsy, TAMANHO_RATO, TAMANHO_RATO)
     surf.blit(a['rato'], (mundo.rato_wx, rsy))
@@ -136,6 +142,7 @@ def tela_jogo(window, assets):
 
     while True:
         clock.tick(FPS)
+
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
                 return SAIR
@@ -156,7 +163,7 @@ def tela_jogo(window, assets):
         resultado, coletou = mundo.verificar_colisoes()
 
         if resultado != 'ok':
-            return TELA_INICIO 
+            return TELA_INICIO
 
         _desenhar_mundo(window, mundo)
         _hud(window, assets, mundo.pontos, mundo.nivel)
