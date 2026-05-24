@@ -1,7 +1,7 @@
 import pygame
 from config import LARGURA, ALTURA, FPS, TELA_INICIO, TELA_JOGO, SAIR
 from assets import carregar_assets
-from telas import tela_inicio
+from telas import tela_inicio, tela_jogo
 
 pygame.init()
 pygame.mixer.init()
@@ -15,8 +15,11 @@ estado = TELA_INICIO
 while estado != SAIR:
     if estado == TELA_INICIO:
         estado = tela_inicio(window, assets)
+
+    elif estado == TELA_JOGO:
+        estado = tela_jogo(window, assets)
+
     else:
         estado = SAIR
-
 
 pygame.quit()
