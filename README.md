@@ -31,3 +31,6 @@ Link:
 ## Dependências
 - Python 3.x
 - pygame
+
+## Observação:
+Fizemos o jogo com o auxílio de inteligência artificial para a resolução de eventuais dúvidas.
