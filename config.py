@@ -17,15 +17,18 @@ VELOCIDADE_MAXIMA_CARRO      = 12.0
 VELOCIDADE_INICIAL_TRONCO    = 1.5
 VELOCIDADE_MAXIMA_TRONCO     = 6.0
 
+# scroll automatico cam
 VELOCIDADE_SCROLL_INICIAL    = 0.18
 AUMENTO_SCROLL_POR_NIVEL     = 0.10
 VELOCIDADE_SCROLL_MAXIMA     = 2.5
 MARGEM_MORTE_SCROLL          = 8
 
+# Paths
 IMG_DIR  = path.join(path.dirname(__file__), 'assets', 'imagens')
 SND_DIR  = path.join(path.dirname(__file__), 'sons')
 FNT_DIR  = path.join(path.dirname(__file__), 'assets', 'fontes')
 
+# Estados
 TELA_INICIO     = 0
 TELA_INSTRUCOES = 1
 TELA_JOGO       = 2
@@ -33,6 +36,7 @@ TELA_PAUSA      = 3
 TELA_GAME_OVER  = 4
 SAIR            = 5
 
+# cores
 PRETO        = (  0,   0,   0)
 BRANCO       = (255, 255, 255)
 CINZA        = (120, 120, 120)

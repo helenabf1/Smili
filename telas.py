@@ -176,11 +176,11 @@ def tela_instrucoes(window, assets):
         ('br', '', None),
         ('p',  'Para mover o Smili, utilize as setas ou as teclas WASD', BRANCO),
         ('br', '', None),
-        ('kb', 'P = Pausar o jogo',       VERDE_CLARO),
+        ('kb', 'P = Pausar o jogo',      VERDE_CLARO),
         ('br', '', None),
-        ('kb', 'ESC = Menu',              VERDE_CLARO),
+        ('kb', 'ESC = Menu',             VERDE_CLARO),
         ('br', '', None),
-        ('kb', 'ENTER = Voltar ao menu',  VERDE_CLARO),
+        ('kb', 'ENTER = Voltar ao menu', VERDE_CLARO),
         ('br', '', None),
         ('br', '', None),
         ('h',  'PERIGOS:', AMARELO),
@@ -315,9 +315,9 @@ def tela_jogo(window, assets):
                 if ev.key==pygame.K_ESCAPE:
                     pygame.mixer.music.stop()
                     return TELA_INICIO
-                elif ev.key in (pygame.K_UP, pygame.K_w):    mundo.mover_rato(0,-1)
-                elif ev.key in (pygame.K_DOWN, pygame.K_s):  mundo.mover_rato(0,+1)
-                elif ev.key in (pygame.K_LEFT, pygame.K_a):  mundo.mover_rato(-1,0)
+                elif ev.key in (pygame.K_UP,    pygame.K_w): mundo.mover_rato(0,-1)
+                elif ev.key in (pygame.K_DOWN,  pygame.K_s): mundo.mover_rato(0,+1)
+                elif ev.key in (pygame.K_LEFT,  pygame.K_a): mundo.mover_rato(-1,0)
                 elif ev.key in (pygame.K_RIGHT, pygame.K_d): mundo.mover_rato(+1,0)
                 elif ev.key==pygame.K_p:
                     res = tela_pausa(window, assets, mundo)
