@@ -26,7 +26,7 @@ Dentro da pasta `rato_na_rua`, execute:
 - **ESC** — voltar ao menu
 
 ## Vídeo de apresentação
-Link: 
+Link: https://youtu.be/L0A_4XHzXoU
 
 ## Dependências
 - Python 3.x
