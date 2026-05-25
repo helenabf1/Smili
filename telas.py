@@ -1,7 +1,7 @@
 """telas.py — renderização completa do mundo."""
 import pygame
 from config import (LARGURA, ALTURA, FPS, FAIXA_H, TAMANHO_RATO,
-                    TELA_INICIO, TELA_JOGO, SAIR,
+                    TELA_INICIO, TELA_JOGO, TELA_INSTRUCOES, SAIR,
                     PRETO, BRANCO, CINZA, CINZA_ESCURO,
                     AMARELO, VERDE_CLARO, LARANJA)
 from mundo import Mundo, tipo_faixa, tile_key
